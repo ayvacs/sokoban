@@ -12,4 +12,3 @@ var instructions = `
 \n`;
 
 console.log(instructions);
-
