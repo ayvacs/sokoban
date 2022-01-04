@@ -38,12 +38,18 @@ function generateWindow() {
     var currentWindow = [[]];
 
     // Generate rows
-    for (var x = 1; x < config.canvasHeight; x++) {
-        currentWindow[x] = [];
-        for (var y = 0; y < config.canvasLength; y++) {
-            currentWindow[x][y] = 1;
-        }
+    for (var y = 1; y < config.canvasHeight + 1; y++) {
+        currentWindow[y] = [];
+        for (var x = 1; x <= config.canvasLength - 1; x++) {
+            if (y == 1 || x == 1 || x == config.canvasLength - 1 || y == config.canvasHeight - 1) {
+                currentWindow[y][x] = 1;
+            } else {
+                currentWindow[y][x] = 0;
+            };
+        };
     };
+
+    console.log(currentWindow);
 
     return currentWindow
 };
@@ -74,7 +80,7 @@ function printWindow() {
         });
         totalCell += currentRow + "\n";
     });
-    print(totalCell);
+    print("Sokoban | Current game" + "\n" + totalCell);
 };
 
 print([
