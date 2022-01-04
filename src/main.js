@@ -22,7 +22,8 @@ var instructions = [
 
 var windowEmoji = [
     "⬛️",
-    "⬜"
+    "⬜",
+    "😳"
 ];
 
 var levelCount = 1;
@@ -56,6 +57,10 @@ function print(input) {
 };
 
 function generateWindow() {
+    var plrCurrentPos = {
+        x: 1,
+        y: 1
+    }
     var currentWindow = [[]];
 
     // Generate rows
@@ -69,6 +74,8 @@ function generateWindow() {
             };
         };
     };
+
+    currentWindow[plrCurrentPos.x + 1][plrCurrentPos.y + 1] = 2;
 
     return currentWindow
 };
@@ -85,6 +92,8 @@ function printWindow() {
                 emojiCode = 0;
             } else if (cell == true) {
                 emojiCode = 1;
+            } else if (cell == "P") {
+                emojiCode = 2;
             } else {
                 emojiCode = cell;
             };
