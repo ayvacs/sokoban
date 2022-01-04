@@ -10,7 +10,9 @@ function print(input) {
 
         console.log(str + "\n");
     } else {
-        console.log("\n " + input + "\n ");
+        var i = input.split("\n");
+        i.pop();
+        print(i);
     };
 };
 
@@ -20,11 +22,13 @@ function printWindow() {
             true,false
         ], [
             false
+        ], [
+            true,false,false,false,true
         ]
     ]
 
     var totalCell = "";
-    window.forEach(function (row, _) {
+    window.forEach(function (row, i) {
         var currentRow = "";
         row.forEach(function (cell, i) {
             var emojiCode;
@@ -37,15 +41,20 @@ function printWindow() {
             var emoji = windowEmoji[emojiCode];
             currentRow += emoji;
         });
-        totalCell += currentRow;
+
+        if (i == row.length + 1) {
+            totalCell += currentRow;
+        } else {
+            totalCell += currentRow + "\n";
+        };
     });
     print(totalCell);
 };
 
 // Variables
 var windowEmoji = [
-    "⬜️",
-    "⬛️"
+    "⬛️",
+    "⬜"
 ];
 
 print([
