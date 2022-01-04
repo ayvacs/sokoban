@@ -1,10 +1,31 @@
-var newLine = " ";
-
 // Variables
+var instructions = [
+    "███████  ██████  ██   ██  ██████  ██████   █████  ███    ██ ",
+    "██      ██    ██ ██  ██  ██    ██ ██   ██ ██   ██ ████   ██ ",
+    "███████ ██    ██ █████   ██    ██ ██████  ███████ ██ ██  ██ ",
+    "     ██ ██    ██ ██  ██  ██    ██ ██   ██ ██   ██ ██  ██ ██ ",
+    "███████  ██████  ██   ██  ██████  ██████  ██   ██ ██   ████ .js",
+    "",
+    "=> GitHub: https://github.com/frogweezer/sokoban",
+    "",
+    "",
+    "           Hi!",
+    "   Welcome to Sokoban!",
+    "",
+    "Your objective is to push the box",
+    "into the hole.",
+    "",
+    "Type [w], [a], [s] and [d] to move",
+    "",
+    "Type [help] to display this message"
+];
+
 var windowEmoji = [
     "⬛️",
     "⬜"
 ];
+
+var levelCount = 1;
 
 // Configuration
 var config = {
@@ -49,8 +70,6 @@ function generateWindow() {
         };
     };
 
-    console.log(currentWindow);
-
     return currentWindow
 };
 
@@ -80,29 +99,8 @@ function printWindow() {
         });
         totalCell += currentRow + "\n";
     });
-    print("Sokoban | Current game" + "\n\n" + totalCell);
+    print("=> Level " + levelCount + " / ∞" + "\n" + totalCell);
 };
 
-print([
-    "███████  ██████  ██   ██  ██████  ██████   █████  ███    ██ ",
-    "██      ██    ██ ██  ██  ██    ██ ██   ██ ██   ██ ████   ██ ",
-    "███████ ██    ██ █████   ██    ██ ██████  ███████ ██ ██  ██ ",
-    "     ██ ██    ██ ██  ██  ██    ██ ██   ██ ██   ██ ██  ██ ██ ",
-    "███████  ██████  ██   ██  ██████  ██████  ██   ██ ██   ████ .js",
-    "",
-    "> GitHub: https://github.com/frogweezer/sokoban",
-    "",
-    "",
-    "           Hi!",
-    "   Welcome to Sokoban!",
-    "",
-    "Your objective is to push the box",
-    "into the hole.",
-    "",
-    "Type [w], [a], [s] and [d] to move",
-    "",
-    "Type [help] to display this message"
-]);
-
-
+print(instructions);
 printWindow();
