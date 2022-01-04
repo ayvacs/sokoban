@@ -1,24 +1,19 @@
-// Print instructions
-var instructions = `
-    *************************
-            Hi!
-    Welcome to Sokoban!
-    *************************
-
-    Your objective is to push the box
-    into the hole.
-
-    Type [w], [a], [s] and [d] to move
-\n`;
-console.log(instructions);
-
-// Variables
-var windowEmoji = [
-    "⬜️",
-    "⬛️"
-];
+var newLine = " ";
 
 // Functions
+function print(input) {
+    if (typeof(input) == "object") {
+        var str = "\n";
+        input.forEach(function(content) {
+            str += "    " + content + "\n";
+        });
+
+        console.log(str + "\n");
+    } else {
+        console.log("\n " + input + "\n ");
+    };
+};
+
 function printWindow() {
     var window = [
         [
@@ -42,11 +37,30 @@ function printWindow() {
             var emoji = windowEmoji[emojiCode];
             currentRow += emoji;
         });
-
-        totalCell += currentRow + "\n";
+        totalCell += currentRow;
     });
+    print(totalCell);
+};
 
-    console.log(totalCell);
-}
+// Variables
+var windowEmoji = [
+    "⬜️",
+    "⬛️"
+];
+
+print([
+    "*************************",
+    "           Hi!",
+    "   Welcome to Sokoban!",
+    "*************************",
+    "",
+    "Your objective is to push the box",
+    "into the hole.",
+    "",
+    "Type [w], [a], [s] and [d] to move",
+    "",
+    "Type [help] to display this message"
+]);
+
 
 printWindow();
