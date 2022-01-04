@@ -80,14 +80,21 @@ function printWindow() {
         });
         totalCell += currentRow + "\n";
     });
-    print("Sokoban | Current game" + "\n" + totalCell);
+    print("Sokoban | Current game" + "\n\n" + totalCell);
 };
 
 print([
-    "*************************",
+    "███████  ██████  ██   ██  ██████  ██████   █████  ███    ██ ",
+    "██      ██    ██ ██  ██  ██    ██ ██   ██ ██   ██ ████   ██ ",
+    "███████ ██    ██ █████   ██    ██ ██████  ███████ ██ ██  ██ ",
+    "     ██ ██    ██ ██  ██  ██    ██ ██   ██ ██   ██ ██  ██ ██ ",
+    "███████  ██████  ██   ██  ██████  ██████  ██   ██ ██   ████ .js",
+    "",
+    "> GitHub: https://github.com/frogweezer/sokoban",
+    "",
+    "",
     "           Hi!",
     "   Welcome to Sokoban!",
-    "*************************",
     "",
     "Your objective is to push the box",
     "into the hole.",
