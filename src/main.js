@@ -27,7 +27,6 @@ function print(input) {
 
         console.log(str + "\n");
     } else {
-        input.replace("⬜"," ");
         var i = input.split("\n");
         i.pop();
         i.pop();
@@ -36,41 +35,24 @@ function print(input) {
 };
 
 function generateWindow() {
-    var window = [];
+    var currentWindow = [[]];
+
     // Generate rows
-    for (var x = 0; x <= config.canvasHeight; x++) {
-        window[x] = [];
+    for (var x = 1; x < config.canvasHeight; x++) {
+        currentWindow[x] = [];
+        for (var y = 0; y < config.canvasLength; y++) {
+            currentWindow[x][y] = 1;
+        }
     };
 
-    // Generate border
-    // Generate border TOP
-    for (var x = 0; x < config.canvasLength; x++) {
-        window[0][x] = windowEmoji[1];
-    };
-
-    // Generate border BOTTOM
-    for (var x = 0; x < config.canvasLength; x++) {
-        window[config.canvasHeight - 1][x] = windowEmoji[1];
-    };
-
-    // Generate border LEFT
-    for (var x = 0; x < config.canvasHeight; x++) {
-        window[x][1] = windowEmoji[1];
-    }
-
-    // Generate border RIGHT
-    for (var x = 0; x < config.canvasHeight; x++) {
-        //window[x][0] = windowEmoji[1];
-    }
-
-    return window
+    return currentWindow
 };
 
 function printWindow() {
-    var window = generateWindow();
+    var currentWindow = generateWindow();
 
     var totalCell = "";
-    window.forEach(function (row, i) {
+    currentWindow.forEach(function (row, i) {
         var currentRow = "";
         row.forEach(function (cell, i) {
             var emojiCode;
@@ -90,12 +72,7 @@ function printWindow() {
             }
             currentRow += emoji;
         });
-
-        if (i == row.length + 1) {
-            totalCell += currentRow;
-        } else {
-            totalCell += currentRow + "\n";
-        };
+        totalCell += currentRow + "\n";
     });
     print(totalCell);
 };
