@@ -6,7 +6,7 @@ var instructions = [
     "     ██ ██    ██ ██  ██  ██    ██ ██   ██ ██   ██ ██  ██ ██ ",
     "███████  ██████  ██   ██  ██████  ██████  ██   ██ ██   ████ .js",
     "",
-    "=> GitHub: https://github.com/frogweezer/sokoban",
+    "=> GitHub: https://github.com/ayvacs/sokoban",
     "",
     "",
     "           Hi!",
